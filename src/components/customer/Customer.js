@@ -2,7 +2,7 @@ import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import { Create, ChipField, List, Datagrid, TextField, EmailField,
         SimpleForm, TextInput, EditButton, SimpleList, TabbedForm, 
-        FormTab, Edit } from 'react-admin';
+        FormTab, Edit, Show } from 'react-admin';
 
 export const CustomerList = props => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
@@ -15,7 +15,7 @@ export const CustomerList = props => {
                     tertiaryText={record => record.phone}
                 />
             ) : (
-                <Datagrid>
+                <Datagrid rowClick="show">
                     <TextField label="Nome" source="name" />
                     <EmailField label="e-mail" source="email" />
                     <ChipField label="Telefone" source="phone" />
@@ -69,3 +69,35 @@ export const CustomerCreate = props => (
         </SimpleForm>
     </Create>
 );
+
+export const CustomerShow = props => {
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+    return (
+        <Show title="Consulta Clientes" {...props}>  
+            {isSmall ? (
+                <SimpleList
+                    primaryText={record => record.name}
+                    secondaryText={record => record.email}
+                    tertiaryText={record => record.phone}
+                />
+            ) : (
+                <TabbedForm>
+                    <FormTab label="Cadastro">
+                        <TextField label="Nome" source="name" />
+                        <EmailField label="E-mail" source="email" />
+                        <TextField label="Telefone" source="phone" />
+                        <TextField label="CPF" source="document" />
+                    </FormTab>
+                    <FormTab label="Endereço">
+                        <TextField label="Rua" source="address.street" />
+                        <TextField label="Numero" source="address.number" />
+                        <TextField label="Cep" source="address.zip" />
+                        <TextField label="Bairro" source="address.neighborhood" />
+                        <TextField label="Estado" source="address.state" />
+                        <TextField label="Cidade" source="address.city" />
+                    </FormTab>
+                </TabbedForm>
+            )}           
+        </Show>
+    );    
+};
