@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/webportal.github/static/css/main.69eda509.chunk.css",
+    "main.js": "/webportal.github/static/js/main.23787554.chunk.js",
+    "main.js.map": "/webportal.github/static/js/main.23787554.chunk.js.map",
+    "runtime-main.js": "/webportal.github/static/js/runtime-main.be81c87a.js",
+    "runtime-main.js.map": "/webportal.github/static/js/runtime-main.be81c87a.js.map",
+    "static/js/2.46737b0b.chunk.js": "/webportal.github/static/js/2.46737b0b.chunk.js",
+    "static/js/2.46737b0b.chunk.js.map": "/webportal.github/static/js/2.46737b0b.chunk.js.map",
+    "index.html": "/webportal.github/index.html",
+    "precache-manifest.663a5e4754acad53553e21cb2b0aba7c.js": "/webportal.github/precache-manifest.663a5e4754acad53553e21cb2b0aba7c.js",
+    "service-worker.js": "/webportal.github/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/webportal.github/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.46737b0b.chunk.js.LICENSE.txt": "/webportal.github/static/js/2.46737b0b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be81c87a.js",
+    "static/js/2.46737b0b.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.23787554.chunk.js"
+  ]
+}
