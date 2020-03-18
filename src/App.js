@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import polyglotI18nProvider from 'ra-i18n-polyglot';
+import portugueseMessages from 'ra-language-portuguese'
+
+import UserIcon from '@material-ui/icons/People';
+
+import { CustomerList, CustomerEdit, CustomerCreate } from './components/customer/Customer'
+
+const dataProvider = jsonServerProvider('http://localhost:8090/v1');
+
+const i18nProvider = polyglotI18nProvider(() => portugueseMessages, 'pt');
+
+const App = () => (
+  <Admin 
+    dataProvider={dataProvider} 
+    i18nProvider={i18nProvider}
+    >
+    <Resource name="customers" options={{ label: 'Clientes' }} 
+              list={CustomerList} edit={CustomerEdit} create={CustomerCreate} icon={UserIcon} />
+    
+  
+  </Admin>
+);
 
 export default App;
