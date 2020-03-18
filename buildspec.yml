@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  instal:
+  install:
     commands:
       - curl -sL https://deb.nodesource.com/setup_13.x | -E bash -
       - apt install -y nodejs
