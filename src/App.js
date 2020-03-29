@@ -9,7 +9,7 @@ import UserIcon from '@material-ui/icons/People';
 
 import { CustomerList, CustomerEdit, CustomerCreate } from './components/customer/Customer'
 
-const dataProvider = jsonServerProvider('http://localhost:8090/v1');
+const dataProvider = jsonServerProvider('http://34.205.74.60:8090/v1');
 
 const i18nProvider = polyglotI18nProvider(() => portugueseMessages, 'pt');
 
